@@ -80,5 +80,20 @@ public class AddressBook {
             System.out.println("No contacts found in state: " + state);
         }
     }
+    
+    public void countContactsByCity(String city) {
+        long count = contacts.stream()
+                .filter(contact -> contact.city.equalsIgnoreCase(city))
+                .count();
+        System.out.println("Total contacts in city '" + city + "': " + count);
+    }
+
+    public void countContactsByState(String state) {
+        long count = contacts.stream()
+                .filter(contact -> contact.state.equalsIgnoreCase(state))
+                .count();
+        System.out.println("Total contacts in state '" + state + "': " + count);
+    }
+
 
 }

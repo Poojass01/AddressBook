@@ -17,6 +17,9 @@ public class AddressBookMain {
             System.out.println("5. Exit");
             System.out.println("6. Search by City");
             System.out.println("7. Search by State");
+            System.out.println("10. Count Contacts by City");
+            System.out.println("11. Count Contacts by State");
+
 
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
@@ -80,6 +83,20 @@ public class AddressBookMain {
                     String stateSearch = scanner.nextLine();
                     addressBook.searchByState(stateSearch);
                     break;
+                    
+                    
+                case 10:
+                    System.out.print("Enter City to count contacts: ");
+                    String countCity = scanner.nextLine();
+                    addressBook.countContactsByCity(countCity);
+                    break;
+
+                case 11:
+                    System.out.print("Enter State to count contacts: ");
+                    String countState = scanner.nextLine();
+                    addressBook.countContactsByState(countState);
+                    break;
+
 
 
                 default:
