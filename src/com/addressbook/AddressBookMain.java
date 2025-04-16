@@ -1,3 +1,6 @@
+package com.addressbook;
+
+
 import java.util.Scanner;
 
 public class AddressBookMain {

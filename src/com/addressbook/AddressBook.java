@@ -1,6 +1,7 @@
 package com.addressbook;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AddressBook {
     private ArrayList<ContactPerson> contacts = new ArrayList<>();
@@ -15,5 +16,28 @@ public class AddressBook {
             System.out.println(contact);
         }
     }
-}
 
+    public void editContact(String name) {
+        for (ContactPerson contact : contacts) {
+            if (contact.firstName.equalsIgnoreCase(name)) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter new Address: ");
+                contact.address = scanner.nextLine();
+                System.out.print("Enter new City: ");
+                contact.city = scanner.nextLine();
+                System.out.print("Enter new State: ");
+                contact.state = scanner.nextLine();
+                System.out.print("Enter new Zip: ");
+                contact.zip = scanner.nextInt();
+                System.out.print("Enter new Phone Number: ");
+                contact.phoneNumber = scanner.nextLong();
+                scanner.nextLine(); // Clear buffer
+                System.out.print("Enter new Email: ");
+                contact.email = scanner.nextLine();
+                System.out.println("Contact updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
+}

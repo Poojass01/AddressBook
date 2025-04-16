@@ -23,3 +23,4 @@ public class ContactPerson {
                " - " + zip + ", Phone: " + phoneNumber + ", Email: " + email;
     }
 }
+
