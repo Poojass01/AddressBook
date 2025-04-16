@@ -1,5 +1,4 @@
 package com.addressbook;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,8 +11,12 @@ public class AddressBook {
     }
 
     public void displayContacts() {
-        for (ContactPerson contact : contacts) {
-            System.out.println(contact);
+        if (contacts.isEmpty()) {
+            System.out.println("No contacts available.");
+        } else {
+            for (ContactPerson contact : contacts) {
+                System.out.println(contact);
+            }
         }
     }
 
@@ -35,6 +38,17 @@ public class AddressBook {
                 System.out.print("Enter new Email: ");
                 contact.email = scanner.nextLine();
                 System.out.println("Contact updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
+
+    public void deleteContact(String name) {
+        for (ContactPerson contact : contacts) {
+            if (contact.firstName.equalsIgnoreCase(name)) {
+                contacts.remove(contact);
+                System.out.println("Contact deleted successfully.");
                 return;
             }
         }
