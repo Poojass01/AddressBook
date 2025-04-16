@@ -54,4 +54,31 @@ public class AddressBook {
         }
         System.out.println("Contact not found.");
     }
+    
+    public void searchByCity(String city) {
+        boolean found = false;
+        for (ContactPerson contact : contacts) {
+            if (contact.city.equalsIgnoreCase(city)) {
+                System.out.println(contact);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No contacts found in city: " + city);
+        }
+    }
+
+    public void searchByState(String state) {
+        boolean found = false;
+        for (ContactPerson contact : contacts) {
+            if (contact.state.equalsIgnoreCase(state)) {
+                System.out.println(contact);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No contacts found in state: " + state);
+        }
+    }
+
 }

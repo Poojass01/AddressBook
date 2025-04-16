@@ -15,6 +15,9 @@ public class AddressBookMain {
             System.out.println("3. Delete Contact");
             System.out.println("4. Display Contacts");
             System.out.println("5. Exit");
+            System.out.println("6. Search by City");
+            System.out.println("7. Search by State");
+
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Clear buffer
@@ -65,6 +68,19 @@ public class AddressBookMain {
                     System.out.println("Thank you for using Address Book!");
                     System.out.println("******************************\n");
                     return;
+                    
+                case 6:
+                    System.out.print("Enter City to search: ");
+                    String citySearch = scanner.nextLine();
+                    addressBook.searchByCity(citySearch);
+                    break;
+
+                case 7:
+                    System.out.print("Enter State to search: ");
+                    String stateSearch = scanner.nextLine();
+                    addressBook.searchByState(stateSearch);
+                    break;
+
 
                 default:
                     System.out.println("Invalid option. Try again.");
