@@ -61,7 +61,9 @@ public class AddressBookMain {
                     break;
 
                 case 5:
-                    System.out.println("Thank you!");
+                    System.out.println("\n******************************");
+                    System.out.println("Thank you for using Address Book!");
+                    System.out.println("******************************\n");
                     return;
 
                 default:
@@ -70,4 +72,5 @@ public class AddressBookMain {
         }
     }
 }
+
 
